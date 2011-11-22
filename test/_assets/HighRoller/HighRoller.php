@@ -3,7 +3,7 @@
  * HighRoller -- PHP wrapper for the popular JS charting library Highcharts
  * Author:       jmaclabs@gmail.com
  * File:         HighRoller.php
- * Date:         Mon Nov 21 15:43:14 PST 2011
+ * Date:         Tue Nov 22 01:07:57 PST 2011
  * Version:      1.0.0
  *
  * Copyright 2011 John McLaughlin

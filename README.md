@@ -2,7 +2,7 @@
 
 HighRoller gets Highcharts JS up and running in your PHP project fast.  
 
-* HighRoller Home Page coming soon!
+* HighRoller [Home Page](http://highroller.io)
 
 ## Features
 
@@ -28,42 +28,31 @@ HighRoller gets Highcharts JS up and running in your PHP project fast.
 A most humble line chart...
 
     <?php
-    // HighRoller: include class files
     require_once('/HighRoller/HighRoller.php');
     require_once('/HighRoller/HighRollerSeriesData.php');
     require_once('/HighRoller/HighRollerLineChart.php');
 
-    // HighRoller: sample data
     $chartData = array(5324, 7534, 6234, 7234, 8251, 10324);
 
-    // HighRoller: create a new line chart object and modify some basic properties
     $linechart = new HighRollerLineChart();
     $linechart->chart->renderTo = 'linechart';
     $linechart->title->text = 'Line Chart';
 
-    // HighRoller: create new series data object and hydrate with precious data
     $series1 = new HighRollerSeriesData();
     $series1->addName('myData')->addData($chartData);
 
-    // HighRoller: add series data object to chart object
     $linechart->addSeries($series1);
-
-    // HighRoller: next comes the HTML markup
     ?>
 
     <head>
-    <!-- jQuery 1.6.1 -->
     <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.6.1/jquery.min.js"></script>
-
     <!-- HighRoller: set the location of Highcharts library -->
     <?php echo HighRoller::setHighChartsLocation("/highcharts/highcharts.js");?>
     </head>
 
     <body>
-    <!-- HighRoller: linechart div container -->
     <div id="linechart"></div>
 
-    <!-- HighRoller: renderChart() method generates new Highcarts object inside script tag -->
     <script type="text/javascript">
       <?php echo $linechart->renderChart();?>
     </script>
@@ -78,12 +67,10 @@ A most humble line chart...
 A very customised example using dates for xAxis labels, autostep, a custom Highcharts theme and native javascript formatters.
 
     <?php
-    // HighRoller: include class files
     require_once('/HighRoller/HighRoller.php');
     require_once('/HighRoller/HighRollerSeriesData.php');
     require_once('/HighRoller/HighRollerLineChart.php');
 
-    // HighRoller: sample data for customized HighRoller Multi-series Line Chart
     for($i = 0; $i <= 50; $i++){
       $chartData[0][] = rand(4000,8000);
       $chartData[1][] = rand(5000,15000);
@@ -91,7 +78,6 @@ A very customised example using dates for xAxis labels, autostep, a custom Highc
       $categories[$i] = 'Label-' . $i;
     }
 
-    // HighRoller: create multiple Series Data objects and add name, color and data to each
     $series1 = new HighRollerSeriesData();
     $series1->addName('Finance')->addColor('#ff9900')->addData($chartData[0]);
     $series2 = new HighRollerSeriesData();
@@ -165,7 +151,6 @@ A very customised example using dates for xAxis labels, autostep, a custom Highc
     ?>
 
     <head>
-    <!-- jQuery 1.6.1 -->
     <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.6.1/jquery.min.js"></script>
 
     <!-- HighRoller: set the location of Highcharts library -->
@@ -174,7 +159,6 @@ A very customised example using dates for xAxis labels, autostep, a custom Highc
     </head>
 
     <body>
-    <!-- HighRoller: linechart div container -->
     <div id="linechart"></div>
     <script type="text/javascript">
 
