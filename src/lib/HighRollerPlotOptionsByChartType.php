@@ -1,0 +1,44 @@
+<?php
+/**
+ * Author: jmac
+ * Date: 9/24/11
+ * Time: 3:28 PM
+ * Desc: HighRoller Plot Options By Chart Type
+ *
+ * Copyright 2011 John McLaughlin
+ *
+ * Licensed under the Apache License, Version 2.0 (the License);
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an AS IS BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ *
+ */
+
+class HighRollerPlotOptionsByChartType {
+
+  function __construct($type){
+
+    if($type == 'pie'){
+      $this->size = '100%';
+      $this->center = array('25%', '60%');
+      $this->allowPointSelect = true;
+      $this->showInLegend = true;
+    } else if($type == 'bar' || $type == 'column'){
+      $this->borderWidth = 0;
+      $this->borderColor = '#555';
+    }
+
+    $this->shadow = true;
+    $this->dataLabels = new HighRollerDataLabels();
+
+  }
+
+}
+?>
